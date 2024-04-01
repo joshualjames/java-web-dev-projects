@@ -9,7 +9,7 @@ public class Alice {
         System.out.println("Enter a term to search for in the first sentence of Alice's Adventures in Wonderland.");
         String search = input.nextLine().toLowerCase();
 
-        Boolean result = text.contains(search);
+        boolean result = text.contains(search);
 
         Integer index = text.indexOf(search);
         Integer length = search.length();
