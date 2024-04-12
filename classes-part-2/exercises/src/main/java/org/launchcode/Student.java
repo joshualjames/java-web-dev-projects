@@ -30,13 +30,24 @@ public class Student {
 
 
     //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public static String getGradeLevel(int credits) {
+        if (credits <= 29) {
+            return "freshman";
+        }else if (credits <= 59){
+            return "sophomore";
+        } else if (credits <= 89){
+             return "junior";
+        } else {
+            return "senior";
+        }
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
-        // Update the appropriate fields: numberOfCredits, gpa
+        double totalQualityScore = this.gpa * this.numberOfCredits;
+        totalQualityScore += courseCredits * grade;
+        this.numberOfCredits += courseCredits;
+        this.gpa = totalQualityScore/this.numberOfCredits;
     }
 
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
@@ -85,5 +96,22 @@ public class Student {
         System.out.println(sally);
         sally.addGrade(25, 3.8);
         System.out.println(sally);
+    }
+    public String toString(){
+        return this.name + " is a " + getGradeLevel(this.numberOfCredits) + " with " + this.numberOfCredits
+                + " credits and a GPA of " + this.gpa;
+    }
+    public boolean equals(Object obj) {
+        if (obj == this){
+            return true;
+        }
+        if (obj == null){
+            return false;
+        }
+        if (obj.getClass() != getClass()){
+            return false;
+        }
+        Student aStudent = (Student) obj;
+        return aStudent.getStudentId() == getStudentId();
     }
 }

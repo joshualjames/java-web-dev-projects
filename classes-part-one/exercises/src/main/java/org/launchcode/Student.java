@@ -1,3 +1,5 @@
+package org.launchcode;
+
 public class Student {
         private String name;
         private int studentId;
@@ -18,8 +20,8 @@ public class Student {
                 this.gpa = 0.0;
         }
 
-        // Drop your getters and setters below for the Student class.
-        // To instantiate the Student class, add your code to the main in the file, SchoolPractice. StudentPractice?
+        // Drop your getters and setters below for the org.launchcode.Student class.
+        // To instantiate the org.launchcode.Student class, add your code to the main in the file, SchoolPractice. org.launchcode.StudentPractice?
 
         public void setName(String name) {
                 this.name=name;
