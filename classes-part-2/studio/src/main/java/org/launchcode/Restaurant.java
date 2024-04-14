@@ -1,9 +1,8 @@
 package org.launchcode;
 
-
 import java.time.LocalDateTime;
-
-import static org.launchcode.Menu.addItem;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Restaurant {
 
@@ -12,17 +11,52 @@ public class Restaurant {
         LocalDateTime lastUpdate = LocalDateTime.now();
         System.out.print(lastUpdate+"\n");
 
-        MenuItem potatoSoup = new MenuItem("Potato Soup",4.50, "Creamy potato soup", "appetizer", true);
-//        MenuItem salad = new MenuItem("Cobb Salad", 4.75, "Cobb salad", "appetizer", true);
-//        MenuItem meatloaf = new MenuItem("Meatloaf",8.50, "Homemade meatloaf", "main course", false);
-//        MenuItem chocolatePudding= new MenuItem("Chocolate Pudding",5.0, "Classic chocolate pudding", "dessert", false);
-//        Menu menu = new Menu(lastUpdate, potatoSoup);
 
-        addItem(potatoSoup);
+
+        MenuItem potatoSoup = new MenuItem("Potato Soup",4.50, "Creamy potato soup", "appetizer", true);
+        MenuItem salad = new MenuItem("Cobb Salad", 4.75, "Cobb salad", "appetizer", true);
+        MenuItem meatloaf = new MenuItem("Meatloaf",8.50, "Homemade meatloaf", "main course", false);
+        MenuItem chocolatePudding= new MenuItem("Chocolate Pudding",5.0, "Classic chocolate pudding", "dessert", false);
+
+        ArrayList<MenuItem> unorgFullMenu = new ArrayList<>(Arrays.asList(potatoSoup, salad, meatloaf, chocolatePudding));
+
+        ArrayList<MenuItem> appetizers = new ArrayList<>();
+        ArrayList<MenuItem> entrees = new ArrayList<>();
+        ArrayList<MenuItem> desserts = new ArrayList<>();
+
+            for(MenuItem item: unorgFullMenu){
+                if (item.getCategory() == "appetizer"){
+                    appetizers.add(item);
+                } else if (item.getCategory() == "main course") {
+                    entrees.add(item);
+                } else if (item.getCategory() == "dessert"){
+                    desserts.add(item);
+                }
+            }
+
+//        System.out.println(appetizers);
+        Menu menuApps = new Menu(lastUpdate, appetizers);
+        Menu menuEntrees = new Menu (lastUpdate, entrees);
+        Menu menuDesserts = new Menu (lastUpdate, desserts);
+
+        System.out.println("Menu: \n Appetizers: \n" + menuApps + "\n Entrees: \n" + menuEntrees
+        + "\n Desserts: \n" + menuDesserts);
+
+//        unorgFullMenu.add(potatoSoup, salad, meatloaf, chocolatePudding);
+//        unorgFullMenu.add(potatoSoup);
+//        unorgFullMenu.add(salad);
+//        unorgFullMenu.add(meatloaf);
+//        unorgFullMenu.add(chocolatePudding);
+
+//        ArrayList<MenuItem> items1 = new ArrayList<>();
+//        items1.add(potatoSoup);
+
+//        Menu menu = new Menu(lastUpdate, items1);
 //        menu.addItem(salad);
 //        menu.addItem(meatloaf);
 //        menu.addItem(chocolatePudding);
-//        System.out.println(menu.getLastUpdated());
+//        System.out.println(menu);
+//        System.out.println(unorgFullMenu);
         System.out.println("hi");
 
 

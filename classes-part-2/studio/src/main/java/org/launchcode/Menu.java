@@ -9,9 +9,12 @@ public class Menu {
     private LocalDateTime lastUpdated;
     private static ArrayList<MenuItem> items;
     //constructors
-    public Menu(LocalDateTime localDateTime, ArrayList<MenuItem> item) {
+    public String toString(){
+        return "Text \n" + items;
+    }
+    public Menu(LocalDateTime localDateTime, ArrayList<MenuItem> itemList) {
         this.lastUpdated = localDateTime;
-        this.items = item;
+        this.items = itemList;
     }
     public Menu(LocalDateTime localDateTime){
         this.lastUpdated = localDateTime;
@@ -34,9 +37,8 @@ public class Menu {
     }
 
     //methods
-    public static void addItem (MenuItem item){
+    public void addItem (MenuItem item){
         items.add(item);
-        System.out.println(item.toString());
     }
 }
 

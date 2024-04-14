@@ -10,7 +10,7 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return "MenuItem{" +
+        return " { " +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 ", description='" + description + '\'' +
@@ -64,6 +64,7 @@ public class MenuItem {
         isNew = aNew;
     }
 
+//
     //methods
 }
 
