@@ -1,6 +1,6 @@
 package org.launchcode;
 
-public class Car {
+public class    Car {
     private String make;
     private String model;
     private int gasTankSize;
