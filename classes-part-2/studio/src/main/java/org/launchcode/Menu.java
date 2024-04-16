@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class Menu {
     //fields
     private LocalDateTime lastUpdated;
-    private static ArrayList<MenuItem> items;
+    private ArrayList<MenuItem> items;
     //constructors
     public String toString(){
         return "Text \n" + items;
