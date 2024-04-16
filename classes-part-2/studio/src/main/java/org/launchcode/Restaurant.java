@@ -11,8 +11,6 @@ public class Restaurant {
         LocalDateTime lastUpdate = LocalDateTime.now();
         System.out.print(lastUpdate+"\n");
 
-
-
         MenuItem potatoSoup = new MenuItem("Potato Soup",4.50, "Creamy potato soup", "appetizer", true);
         MenuItem salad = new MenuItem("Cobb Salad", 4.75, "Cobb salad", "appetizer", true);
         MenuItem meatloaf = new MenuItem("Meatloaf",8.50, "Homemade meatloaf", "main course", false);
@@ -42,23 +40,7 @@ public class Restaurant {
         System.out.println("Menu: \n Appetizers: \n" + menuApps + "\n Entrees: \n" + menuEntrees
         + "\n Desserts: \n" + menuDesserts);
 
-//        unorgFullMenu.add(potatoSoup, salad, meatloaf, chocolatePudding);
-//        unorgFullMenu.add(potatoSoup);
-//        unorgFullMenu.add(salad);
-//        unorgFullMenu.add(meatloaf);
-//        unorgFullMenu.add(chocolatePudding);
-
-//        ArrayList<MenuItem> items1 = new ArrayList<>();
-//        items1.add(potatoSoup);
-
-//        Menu menu = new Menu(lastUpdate, items1);
-//        menu.addItem(salad);
-//        menu.addItem(meatloaf);
-//        menu.addItem(chocolatePudding);
-//        System.out.println(menu);
-//        System.out.println(unorgFullMenu);
-        System.out.println("hi");
-
+        menuApps.printItems();
 
     }
 }

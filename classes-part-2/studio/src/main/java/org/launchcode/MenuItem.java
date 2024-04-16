@@ -10,13 +10,11 @@ public class MenuItem {
 
     @Override
     public String toString() {
-        return " { " +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", description='" + description + '\'' +
-                ", category='" + category + '\'' +
-                ", isNew=" + isNew +
-                '}';
+        return "" + name +
+                ", $" + price +
+                ", description: '" + description + '\'' +
+                ", category= '" + category + '\'' +
+                ", isNew=" + isNew;
     }
 
     //constructors
