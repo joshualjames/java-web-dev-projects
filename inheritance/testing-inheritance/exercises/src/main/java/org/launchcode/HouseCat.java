@@ -1,3 +1,7 @@
+package org.launchcode;
+
+import org.launchcode.Cat;
+
 public class HouseCat extends Cat {
     private String name;
     private String species = "Felis catus";
@@ -17,6 +21,6 @@ public class HouseCat extends Cat {
     }
 
     public String purr() {
-        return "I'm a HouseCat";
+        return "I'm a org.launchcode.HouseCat";
     }
 }

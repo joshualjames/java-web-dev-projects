@@ -1,3 +1,5 @@
+package org.launchcode;
+
 public class Cat {
 
     private boolean tired = false;
