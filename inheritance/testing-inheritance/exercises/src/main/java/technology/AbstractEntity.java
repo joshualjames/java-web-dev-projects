@@ -10,6 +10,7 @@ private static int globalID = 0;
        globalID++;
     }
 
-    abstract void getID();
-    return iD;
+    public int getID() {
+        return iD;
+    }
 }

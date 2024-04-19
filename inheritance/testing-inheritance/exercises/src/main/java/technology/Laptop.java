@@ -20,9 +20,5 @@ public class Laptop extends Computer {
             if (batteryLevel > 100){
                 batteryLevel = 100;}}
     }
-    @Override
-    void assignAndSetEntityID() {
-        this.getEntityID();
-        this.setEntityID(this.getEntityID()+1);
-    }
+
 }

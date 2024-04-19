@@ -34,9 +34,4 @@ public class Computer extends AbstractEntity{
         storageSpaceInGB -= downloadSize;
     }
 
-    @Override
-    void assignAndSetEntityID() {
-        this.getEntityID();
-        this.setEntityID(this.getEntityID()+1);
-    }
 }
