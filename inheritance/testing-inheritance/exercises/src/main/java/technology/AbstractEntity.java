@@ -1,15 +1,15 @@
 package technology;
 
 public abstract class AbstractEntity {
-    private int entityID = 0;
+    private int iD;
 
-    public int getEntityID() {
-        return entityID;
+private static int globalID = 0;
+
+    public AbstractEntity () {
+       iD = globalID;
+       globalID++;
     }
 
-    public void setEntityID(int entityID) {
-        this.entityID = entityID;
-    }
-
-    abstract void assignAndSetEntityID();
+    abstract void getID();
+    return iD;
 }
