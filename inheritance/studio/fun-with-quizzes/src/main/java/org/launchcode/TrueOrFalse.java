@@ -1,51 +1,38 @@
 package org.launchcode;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TrueOrFalse extends Questions {
-    private String correctAnswer;
-    private String candidateAnswer;
-    public TrueOrFalse (String questions, int pointValue, String correctAnswer){
-        super(questions, pointValue);
+public class TrueOrFalse extends Question {
+    //fields
+    private Boolean correctAnswer;
+
+
+    //Constructors
+
+
+    public TrueOrFalse(String text, Boolean correctAnswer) {
+        super(1, text);
         this.correctAnswer = correctAnswer;
     }
 
-    //Getters and Setters
-
-    public String getCorrectAnswer() {
-        return correctAnswer;
-    }
-
-    public void setCorrectAnswer(String correctAnswer) {
-        this.correctAnswer = correctAnswer;
-    }
-
-    public String getCandidateAnswer() {
-        return candidateAnswer;
-    }
-
-    public void setCandidateAnswer(String candidateAnswer) {
-        this.candidateAnswer = candidateAnswer;
-    }
-
-    //Methods
     @Override
-    void displayAnswers(){
-        System.out.println("True or False?");
+    public void displayAnswers() {
     }
 
     @Override
-    public int getCandidateAnswers(){
-        Scanner input = new Scanner(System.in);
-        candidateAnswer = input.nextLine();
-        return validateAnswer();
+    public int getAnswers() {
+        Boolean userAnswer = UserInputHandler.getTrueOrFalseAnswer();
+        return isCorrectAnswer(userAnswer)? 1:0;
     }
 
-    public int validateAnswer() {
-        if (candidateAnswer.equals(correctAnswer)) {
-            return 1;
-        } else {
-            return 0;
-        }
+    @Override
+    public void displayQuestion() {
+        System.out.println("\n\tTrue or False:\n" + getText());
+    }
+
+
+    public boolean isCorrectAnswer(Boolean possibleAnswer) {
+        return possibleAnswer == correctAnswer;
     }
 }

@@ -3,33 +3,44 @@ package org.launchcode;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MultipleChoice extends Questions{
+public class MultipleChoice extends Question {
     //Fields
+    private ArrayList<String> possibleAnswers;
     private String correctAnswer;
-    private String candidateAnswer;
-    private ArrayList<String> possibleAnswers = new ArrayList<>();
 
-    public MultipleChoice(String questions, int pointValue, String correctAnswer, ArrayList<String>){
 
+    //Constructors
+    public MultipleChoice(String text, ArrayList<String> possibleAnswers, String correctAnswer) {
+        super(1, text);
+        this.possibleAnswers = possibleAnswers;
+        this.correctAnswer = correctAnswer;
     }
 
-
-
-
-
-
-                          @Override
-    public int getCandidateAnswers(){
-        Scanner input = new Scanner(System.in);
-        candidateAnswer = input.nextLine();
-        return validateAnswer();
-    }
-
-    public int validateAnswer() {
-        if (candidateAnswer.equals(correctAnswer)) {
-            return 1;
-        } else {
-            return 0;
+    @Override
+    public void displayAnswers() {
+        for (int i = 0; i < possibleAnswers.size(); i++) {
+            System.out.println(Question.letters[i] + possibleAnswers.get(i));
         }
     }
+
+    @Override
+    public int getAnswers() {
+        String userAnswer = UserInputHandler.getMultipleChoiceAnswers();
+        return checkMCAnswer(userAnswer) ? 1 : 0;
+    }
+
+    @Override
+    public void displayQuestion() {
+        System.out.println("\n\tSelect the correct answer (only one):\n" + getText());
+    }
+
+    public boolean checkMCAnswer(String possibleAnswer) {
+        return possibleAnswer.equals(correctAnswer);
+    }
 }
+
+
+
+
+
+
