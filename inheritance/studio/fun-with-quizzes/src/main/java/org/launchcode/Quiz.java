@@ -38,7 +38,7 @@ public class Quiz {
 
     public void gradeQuiz(){
         System.out.println("You finished the quiz! Your score is "+score+" pts");
-        int percentageGrade= (score/total)*100;
+        double percentageGrade= ((double)score/(double)total)*100;
         System.out.println("Your grade as a percentage is " + percentageGrade +"%");
         System.out.println(total);
     }
